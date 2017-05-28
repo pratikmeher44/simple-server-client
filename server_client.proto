@@ -1,3 +1,4 @@
+/* server-client gRPC service */
 
 syntax = "proto3";
 
