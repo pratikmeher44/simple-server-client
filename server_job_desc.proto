@@ -1,0 +1,26 @@
+
+/* Job structured data */
+
+syntax = "proto3";
+
+package server_client;
+
+import "server_task_desc.proto";
+
+message JobDescriptor {
+  enum JobState {
+    NEW = 0;
+    CREATED = 1;
+    RUNNING = 2;
+    COMPLETED = 3;
+    FAILED = 4;
+    ABORTED = 5;
+    UNKNOWN = 6;
+  }
+
+  string uuid = 1;
+  string name = 2;
+  JobState state = 3;
+  TaskDescriptor root_task = 4;
+}
+

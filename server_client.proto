@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package server_client;
+
+import "server_job_desc.proto";
+
+//definition of request and reply
+service Task {
+	rpc Send (Request) returns (JobDescriptor) {}
+}
+
+//request message
+message Request {
+	string str_request = 1;	
+}
+

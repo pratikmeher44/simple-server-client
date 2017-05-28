@@ -1,0 +1,34 @@
+
+/* Task structured data */
+
+syntax = "proto3";
+
+package server_client;
+
+message TaskDescriptor {
+  enum TaskState {
+    CREATED = 0;
+    BLOCKING = 1;
+    RUNNABLE = 2;
+    ASSIGNED = 3;
+    RUNNING = 4;
+    COMPLETED = 5;
+    FAILED = 6;
+    ABORTED = 7;
+    DELEGATED = 8;
+    UNKNOWN = 9;
+  }
+
+  enum TaskType {
+    SHEEP = 0;
+    RABBIT = 1;
+    DEVIL = 2;
+    TURTLE = 3;
+  }
+
+  uint64 uid = 1;
+  string name = 2;
+  TaskState state = 3;
+  string job_id = 4;
+  TaskType task_type = 5;
+}
